@@ -1,0 +1,85 @@
+<div class="container" style="margin-top: 4rem;">
+    <div class="row">
+        <div class="col-12">
+            <div role="alert" class="alert alert-info"> <strong>Backend Solution</strong> API consumed in the backend tier, need to run the pokemon-server project. Write for exemplo London, São Paulo, Tóquio, Lisboa to load pokemon </div> 
+        </div>
+    </div>
+</div>
+<div class="newsletter-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-5">
+                <div class="newsletter-content">
+                <h3>INSERT THE CITY TO SEE</h3>
+                <h2>TEMPERATURE AND POKEMON</h2>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7">
+                <div class="newsletter-form angle">
+                <form id="mc-form" class="mc-form footer-newsletter fix" novalidate="true">
+                    <div class="subscribe-form">
+                        <input id="mc-email" [(ngModel)]="city" [disabled]="isCityLoad" type="email" name="EMAIL" placeholder="Enter the city name...">
+                        <button id="mc-submit" type="submit" (click)="getPokemonsByCityTemperature()">LOAD POKEMON</button>
+                    </div>
+                </form>
+                <!-- mailchimp-alerts Start -->
+                <div class="mailchimp-alerts text-centre fix pull-right">
+                    <div class="mailchimp-submitting"></div>
+                    <!-- mailchimp-submitting end -->
+                    <div class="mailchimp-success"></div>
+                    <!-- mailchimp-success end -->
+                    <div class="mailchimp-error"></div>
+                    <!-- mailchimp-error end -->
+                </div>
+                <!-- mailchimp-alerts end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!isCityLoad" class="container">
+    <div class="row">
+        <div class="col-12">
+            <h5 style="margin-top: 6rem; margin-bottom: 6rem;">When you insert the name of the city and click on the button, the information about the weather and the type of Pokemon will be load here...</h5>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isCityLoad" class="about-page-area section-padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="section-title-wrapper">
+               <div class="section-title">
+                  <h3>{{city}}</h3>
+                  <p>Temperature in {{city}} at this moment is about {{wearther.main.temp}} °C</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-lg-6 col-md-12 col-12">
+            <div class="about-text-container">
+               <p><span>In {{city}} at this moment is {{wearther.weather[0].main}}</span>
+               </p>
+               <p>The API return the following Pokemon based in the temperature of the city {{city}}.</p>
+               <p>The Pokemon name is {{pokemon.pokemon.name}} of the type {{typePokemon}}</p>
+            </div>
+            <div>
+                <h5 style="margin-top: 1rem; margin-bottom: 1rem;">If you want it's possible to load another Pokemon of the same type based in the temperature. Just Clique bellow.</h5>
+                <button type="submit" class="button-default" style="width: 90%;" (click)="loadPokemonImage()">CARREGAR OUTRO POKEMON</button>
+            </div>
+            <div>
+                <h5 style="margin-top: 1rem; margin-bottom: 1rem;">To take a look in another city clear the result. Just Clique bellow.</h5>
+                <button type="submit" class="button-default" style="width: 90%;" (click)="clearResult()">CLEAR THE RESULT</button>
+            </div>
+         </div>
+         <div class="col-lg-6 col-md-12 col-12">
+            <div class="skill-image">
+               <img [src]="imagePokemon" alt="">
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

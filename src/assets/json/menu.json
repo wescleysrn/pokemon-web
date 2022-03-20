@@ -1,0 +1,33 @@
+[
+    {
+        "menu": "HOME",
+        "route": "",
+        "isOpen": false,
+        "sub": []
+    },
+    {
+        "menu": "SOLUTION POKEMON",
+        "route": "",
+        "isOpen": false,
+        "sub": [
+            {
+                "menu": "Front End Style",
+                "route": "frontend",
+                "isOpen": false,
+                "sub": []
+            },
+            {
+                "menu": "Backend Style",
+                "route": "backend",
+                "isOpen": false,
+                "sub": []
+            }
+        ]
+    },
+    {
+        "menu": "DOCUMENTATION",
+        "route": "documentation",
+        "isOpen": false,
+        "sub": []
+    }
+]

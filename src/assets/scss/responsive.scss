@@ -1,0 +1,34 @@
+/* Large desktop :1920px. */
+@media (min-width: 1920px) {
+    .container {width: 1230px}
+    .as-mainwrapper .container {width: 1200px}
+    .as-mainwrapper.wrapper-boxed .slider-area::after {width: 65%;}
+    .as-mainwrapper.wrapper-boxed .slider-area.slider-two::after {width: 100%;}
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+    .container {width:970px}
+    .as-mainwrapper.wrapper-boxed {width: 970px}
+    .as-mainwrapper.wrapper-boxed .header-logo-menu.stick {width: 970px}
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {max-width:750px}
+    .as-mainwrapper.wrapper-boxed {width:750px}
+    .as-mainwrapper.wrapper-boxed .header-logo-menu.stick {width: 750px;}
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    .container {max-width:320px}
+    .as-mainwrapper.wrapper-boxed {width:300px;position: inherit;}
+    .as-mainwrapper.wrapper-boxed .header-logo-menu.stick {width: 300px;}
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {max-width:450px}
+    .as-mainwrapper.wrapper-boxed {width:450px}
+}

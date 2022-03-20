@@ -1,0 +1,102 @@
+
+<div class="container">
+    <div class="row" style="margin-top: 4rem;">
+        <div class="col-md-12">
+            <div class="section-title-wrapper">
+                <div class="section-title">
+                    <h3>Pokémon Challenge for Developers</h3>
+                    <p>Two solutions were created, one consuming the API in the web layer and the other in the bankend</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>The following is the definition of the challenge as received in Portuguese</p>
+        </div>
+        <div class="col-md-12">
+            <h3>Definições</h3>
+            <p>- Leia todo o conteúdo antes de iniciar e busque entender de fato o desafio proposto;<br>
+            - Não se trata de um desafio complexo, apesar da leitura ser extensa;<br>
+            - O desafio baseia-se em consumir 2 APIs de diferentes fontes de dados com intuito de agregar as informações e solucionar o problema de acordo com o que foi proposto;<br>
+            - Não completar o desafio não será critério para desclassificação, iremos analisar como a proposta do desafio foi elaborada e não somente o resultado;</p>
+            <h3>O Desafio</h3>
+            <p>O objetivo é criar uma aplicação web seguindo os seguintes critérios:<br>
+            - Em uma página HTML(Angular 8+), para vagas fullstack, obrigatório Angular 8+, deve ser possível informar uma cidade de qualquer lugar do mundo; (Em caso de oportunidades apenas backend, usar postman)<br>
+            - De acordo com as condições climáticas desta cidade deve-se exibir um Pokémon baseado em seu tipo (fogo, água, elétrico, etc) seguindo as seguintes regras:<br>
+            - Lugares onde a temperatura for menor **(<) que 5ºC**, deve-se retornar um pokémon de **gelo (ice)**.<br>
+            - Lugares onde a temperatura estiver entre **(>=) 5ºC e (<) 10ºC**, deve-se retornar um pokémon do tipo **água (water)**.<br>
+            - Lugares onde a temperatura estiver entre **(>=) 12ºC e (<) 15ºC**, deve-se retornar um pokémon do tipo **grama (grass)**.<br>
+            - Lugares onde a temperatura estiver entre **(>=) 15ºC e (<) 21ºC**, deve-se retornar um pokémon do tipo **terra (ground)**.<br>
+            - Lugares onde a temperatura estiver entre **(>=) 23ºC e (<) 27ºC**, deve-se retornar um pokémon do tipo **inseto (bug)**.<br>
+            - Lugares onde a temperatura estiver entre **(>=) 27ºC e 33ºC inclusive**, deve-se retornar um pokémon do tipo **pedra (rock)**.<br>
+            - Lugares onde a temperatura for **maior que 33ºC**, deve-se retornar um pokémon do tipo **fogo (fire)**.<br>
+            - **Para qualquer outra temperatura**, deve-se retornar um pokémon do tipo **normal**.<br>
+            - E, no caso em que **esteja chovendo na região** um pokémon **elétrico (electric)** deve ser retornado, independente da temperatura.<br>
+            - O pokémon mostrado pode ser aleatório;<br>
+            - Após a consulta deve-se exibir na tela:<br>
+            - Temperatura atual da cidade em graus Celcius;<br>
+            - Se está chovendo ou não;<br>
+            - Nome do Pokémon seguindo as regras acima.</p>
+            <h3>Orientações</h3>
+            <p>- Para consultas de condições climáticas utilize a API [OpenWeatherMap](https://openweathermap.org/api);<br>
+            - Para consultas de Pokémons utilize a API [PokéAPI](https://pokeapi.co/docs/v2.html).</p>
+            <h4>Passo 1 – Configurando o OpenweatherMap</h4>
+            <p>- Acesse o link da plataforma em https://openweathermap.org/;<br>
+                - No topo da página procure e clique no botão de “Sign UP”;<br>
+                - Entre com as suas credenciais e crie um novo acesso, para que possa gerar um `APPID`, na plataforma;<br>
+                - Quando estiver logado, procure e clique no botão “API Keys”;<br>
+                - Ao ser direcionado para a próxima página visualize um pequeno formulário chamado “Create Key”;<br>
+                - No input “Name”, coloque o nome que achar mais conveniente, por exemplo: “Default”;<br>
+                - Em seguida clique no botão “Generate”;<br>
+                - Ao lado do formulário uma “Key” (chave), será gerada com o nome que você informou no passo anterior, essa chave é o que a plataforma chama de `APPID` e será utilizada ao realizarmos as requisições Rest para as API(s) da plataforma.
+            </p>
+            <h4>Passo 2 – API do OpenWeatherMap</h4>
+            <p>- Estando logado na plataforma procure pelo botão “API” no menu principal da aplicação, ou simplesmente acesse https://openweathermap.org/api;<br>
+                - Na página de API procure pelo título **“Current weather data”**, e clique no botão **“API Doc”**, logo abaixo do título;<br>
+                - Após o edireccionamento, você terá diversas informações sobre o que a API pode fazer, resumidamente iremos utilizá-la para informar o nome da cidade que deseja ver as condições climáticas da região;<br>
+                - Para isso deve ser utilizada a API chamada **“By city name”**.<br>
+                - Ex.: <br>
+                https://api.openweathermap.org/data/2.5/weather?q=NOME_DA_CIDADE&appid=APPID<br>
+                - Substituindo o conteúdo **NOME_DA_CIDADE** e **APP_ID**, com o nome da cidade que deseja saber o clima e o token gerado no passo 1;<br>
+                - O resultado dessa requisição será um objeto do tipo JSON, atualmente o mais utilizado para aplicações RESTful;<br>
+                - Apenas dois atributos são de importância para o desafio o primeiro é o atributo chamado **“weather”**, que irá dar informação caso esteja chovendo na região, e o atributo **“main”**, que contém a temperatura da cidade em questão.
+            </p>
+            <h4>Passo 3 – API do PokeAPI</h4>
+            <p>A plataforma PokéAPI não exige token de autenticação o que torna sua utilização bem mais simples, então acesse o link https://pokeapi.co/<br>
+                - Logo na página inicial é possível testar a API, basta seguir os exemplos clicando nos links abaixo do input de submit, por exemplo 
+                **“/type/3/”**;<br>
+                - A API que nos interessa nesse caso é exatamente a de tipo, porém ao invés de passar um valor numérico iremos passar o nome do tipo como parâmetro, como pode ser visto na documentação: <br>
+                https://pokeapi.co/docs/v2.html/#types<br>
+                - Para isso pode-se fazer a seguinte requisição como no exemplo:<br>
+                - https://pokeapi.co/api/v2/type/< NOME_DO_TIPO><br>
+                - ou<br>
+                - https://pokeapi.co/api/v2/type/electric<br>
+                - No qual < NOME_DO_TIPO> deve ser substituído pelo tipo de elemento desejado (ice, water, grass, ground, etc)<br>
+                - O retorno dessa requisição também será um objeto do tipo JSON, sendo que um único atributo é de interesse para esse desafio, que se trata do array de elementos chamado “pokemon”;
+            </p>
+            <h4>Informações Adicionais</h4>
+            <p>- Uma breve documentação com os passos para executar a aplicação deve ser elaborada; **(requisito obrigatório)**<br>
+                - Na documentação deve constar as tecnologias utilizadas; **(requisito obrigatório)**<br>
+                - Qualquer coisa adicionada como extra por parte do desenvolvedor, por exemplo exibir a imagem do pokémon na tela, será contabilizada como ponto extra, desde que os outros requisitos estejam 100% funcionais; <br>
+                **(não é um requisito obrigatório)**<br>
+                - Todo o código deve ser adicionado em seu Github pessoal, além da documentação no formato markdown facilmente aceito pelo github. <br>
+                **(requisito obrigatório)**<br>
+                ## O que será avaliado<br>
+                - Organização<br>
+                - SOLID<br>
+                - Lógica<br>
+                - Preocupação com o resultado final<br>
+                - Facilidade no setup da aplicação<br>
+                - Documentação<br>
+                - Tratamentos de erro
+            </p>
+            <h3>Dicas</h3>
+            <p>Recomendamos o uso de uma ferramenta chamada postman para realizar o testes com as API(s) (https://www.getpostman.com/);<br>
+                > Lembre-se que um dos critérios da aplicação é o uso da temperatura em graus Celsius, caso faça a request de clima no formato original, o resultado dos atributos de temperatura estarão em Fahrenheit, então verifique como alterar para Celsius utilizando o parâmetro units na requisição.<br>
+                > Usar Java/Spring Boot preferencialmente , em caso fullstacks, Angular será cobrado(não serão necessários designs lindos), o uso de Docker facilita bastante nossa vida 😊, se fizer testes em algum cenário, seja bem vindo</p>
+        </div>
+    </div>
+</div>

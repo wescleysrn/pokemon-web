@@ -1,0 +1,96 @@
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-5 d-none d-lg-block d-md-block">
+                    <span>Pokémon Challenge for Developers</span>
+                </div>
+                <div class="col-lg-5 col-md-7 col-12">
+                    <div class="header-top-right">
+                        <div class="content">
+                            <a href="https://www.linkedin.com/in/wescley-sousa/?locale=en_US" target="_blank"><i class="fa-brands fa-linkedin"></i> My LinkedIn</a>
+                        </div>
+                        <div class="content">
+                            <a href="https://github.com/wescleysrn" target="_blank"><i class="fa-brands fa-github"></i> My Github</a>
+                        </div>
+                        <div class="content">
+                            <a href="https://stackoverflow.com/users/16768075/wescley" target="_blank"><i class="fa-solid fa-code"></i> Stackoverflow</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-logo-menu sticker" [ngClass]="{'stick':stickService.isStick}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12">
+                    <div class="logo">
+                        <a href="#"><img src="assets/img/logo/logo.png" alt="EDUCAT" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-12">
+                    <div class="mainmenu-area pull-right">
+                        <div class="mainmenu d-none d-lg-block">
+                            <nav>
+                                <ul id="nav">
+                                    <li *ngFor="let menu of menus" class="current">
+                                        <a (click)="openPage(menu.route)">{{menu.menu}}</a>
+                                        <ul class="sub-menu" *ngIf="menu.sub.length > 0">
+                                            <li *ngFor="let menu of menu.sub">
+                                                <a (click)="openPage(menu.route)">{{menu.menu}}<i *ngIf="menu.sub.length > 0" class="fa-solid fa-chevron-right"></i></a>
+                                                <ul *ngIf="menu.sub.length > 0" class="inside-menu">
+                                                    <li *ngFor="let menu of menu.sub">
+                                                        <a (click)="openPage(menu.route)">{{menu.menu}}</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu Area start -->
+    <div class="mobile-menu-area">
+        <div class="container clearfix mean-container">
+            <div class="mean-bar">
+                <a href="#nav" class="meanmenu-reveal" [ngClass]="{'meanclose':isMenuOpen}" style="right: 0px; left: auto; text-align: center; text-indent: 0px; font-size: 18px;">
+                    <div *ngIf="!isMenuOpen" (click)="cliqueMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <a *ngIf="isMenuOpen" (click)="cliqueMenu()">X</a>
+                </a>
+                <nav class="mean-nav">
+                    <ul style="display: none;" [ngClass]="{'mean-nav-open':isMenuOpen}">
+                        <li *ngFor="let menu of menus; let last = last;" [ngClass]="{'mean-last':last}">
+                            <a *ngIf="menu.sub.length > 0" (click)="menu.isOpen = !menu.isOpen">{{menu.menu}}</a>
+                            <a *ngIf="menu.sub.length == 0" (click)="openPage(menu.route)">{{menu.menu}}</a>
+                            <ul *ngIf="menu.sub.length > 0" style="display: none;" [ngClass]="{'mean-nav-open':menu.isOpen}">
+                                <li *ngFor="let menu of menu.sub">
+                                    <a (click)="openPage(menu.route)">{{menu.menu}}</a>
+                                    <ul *ngIf="menu.sub.length > 0" style="display: none;" [ngClass]="{'mean-nav-open':menu.isOpen}">
+                                        <li *ngFor="let menu of menu.sub">
+                                            <a (click)="openPage(menu.route)">{{menu.menu}}</a>
+                                        </li>
+                                    </ul>
+                                    <a (click)="menu.isOpen = !menu.isOpen" *ngIf="menu.sub.length > 0 && !menu.isOpen" class="mean-expand" style="font-size: 18px;">+</a>
+                                    <a (click)="menu.isOpen = !menu.isOpen" *ngIf="menu.sub.length > 0 && menu.isOpen" class="mean-expand" style="font-size: 18px;">-</a>
+                                </li>
+                            </ul>
+                            <a (click)="menu.isOpen = !menu.isOpen" *ngIf="menu.sub.length > 0 && !menu.isOpen" class="mean-expand" style="font-size: 18px;">+</a>
+                            <a (click)="menu.isOpen = !menu.isOpen" *ngIf="menu.sub.length > 0 && menu.isOpen" class="mean-expand" style="font-size: 18px;">-</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>    
+    <!-- Mobile Menu Area end -->
+</header>
