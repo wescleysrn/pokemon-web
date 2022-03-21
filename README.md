@@ -25,6 +25,32 @@
 
     Angular project aimed at providing the features of the Pokemon challenge.
 
+	<p align="center">
+	  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/001.png">
+	</p>
+	
+	The project was created using the Angular framework, with Server Side Rendering, PWA capability and using bootstrap as a style sheet.
+	The main Angular libraries such as forms, route, http, etc. were used.
+
+	<p align="center">
+	  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/002.png">
+	</p>
+	
+	The solution allows you to enter the name of a city and based on that city, the weather API is consumed, which searches for the current temperature, if it is raining at the moment, etc.
+	According to the weather of the city, the Pokemon API is consumed to display the image of a Pokemon of a type according to the weather.
+
+	<p align="center">
+	  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/003.png">
+	</p>
+	
+	It is possible to load other Pokemons of the same type or clear the data that was loaded for a new query.
+	Two solutions were created, a frontend and a backend, and to work the API search by the backend it is necessary to run the pokemon-server project in Java.
+	The solution is also responsive and has all developer data.
+	
+	<p align="center">
+	  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/004.png">
+	</p>
+	
 # Creation of the Project Base Structure
 
     The steps used to create the project are described below.
