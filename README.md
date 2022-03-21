@@ -1,61 +1,46 @@
 # How to execute the project
 
-	1 - Clone repository from github
-	
-	$ git clone https://github.com/wescleysrn/pokemon-web.git
-	
-	2 - Access the project
-	
-	$ cd pokemon-web
-	
-	3 - Install libraries and dependencies
-	
-	$ npm install
-	
-	4 - Run the project
+## Commands
 
-	$ ng serve
-	
-	5 - Access the solution
-	
-	http://localhost:4200/
-	
+<p align="justify">1 - Clone repository from github</p>
+<p align="justify">git clone https://github.com/wescleysrn/pokemon-web.git</p>
+<p align="justify">2 - Access the project</p>
+<p align="justify">cd pokemon-web</p>
+<p align="justify">3 - Install libraries and dependencies</p>
+<p align="justify">npm install</p>
+<p align="justify">4 - Run the project</p>
+<p align="justify">ng serve</p>
+<p align="justify">5 - Access the solution</p>
+<p align="justify">http://localhost:4200/</p>
 
-# Pokemon-Web
+## Pokemon-Web
 
-    <p>Angular project aimed at providing the features of the Pokemon challenge.</p>
+<p align="justify">Angular project aimed at providing the features of the Pokemon challenge.</p>
+<p align="center">
+  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/001.png">
+</p>
+<p align="justify">The project was created using the Angular framework, with Server Side Rendering, PWA capability and using bootstrap as a style sheet.</p>
+<p align="justify">The main Angular libraries such as forms, route, http, etc. were used.</p>
+<p align="center">
+  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/002.png">
+</p>
+<p align="justify">The solution allows you to enter the name of a city and based on that city, the weather API is consumed, which searches for the current temperature, if it is raining at the moment, etc.</p>
+<p align="justify">According to the weather of the city, the Pokemon API is consumed to display the image of a Pokemon of a type according to the weather.</p>
+<p align="center">
+  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/003.png">
+</p>
+<p align="justify">It is possible to load other Pokemons of the same type or clear the data that was loaded for a new query.</p>
+<p align="justify">Two solutions were created, a frontend and a backend, and to work the API search by the backend it is necessary to run the pokemon-server project in Java.</p>
+<p align="justify">The solution is also responsive and has all developer data.</p>
+<p align="center">
+  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/004.png">
+</p>
 
-	<p align="center">
-	  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/001.png">
-	</p>
-	
-	<p>The project was created using the Angular framework, with Server Side Rendering, PWA capability and using bootstrap as a style sheet.</p>
-	<p>The main Angular libraries such as forms, route, http, etc. were used.</p>
-
-	<p align="center">
-	  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/002.png">
-	</p>
-	
-	<p>The solution allows you to enter the name of a city and based on that city, the weather API is consumed, which searches for the current temperature, if it is raining at the moment, etc.</p>
-	<p>According to the weather of the city, the Pokemon API is consumed to display the image of a Pokemon of a type according to the weather.</p>
-
-	<p align="center">
-	  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/003.png">
-	</p>
-	
-	<p>It is possible to load other Pokemons of the same type or clear the data that was loaded for a new query.</p>
-	<p>Two solutions were created, a frontend and a backend, and to work the API search by the backend it is necessary to run the pokemon-server project in Java.</p>
-	<p>The solution is also responsive and has all developer data.</p>
-	
-	<p align="center">
-	  <img src="https://github.com/wescleysrn/mestradounb/blob/master/imagens/pokemon/004.png">
-	</p>
-	
-# Creation of the Project Base Structure
+## Creation of the Project Base Structure
 
     The steps used to create the project are described below.
 
-## Versions used
+### Versions used
 
     This project was created with npm, node, updated angular-cli and running the following commands:
 
@@ -252,4 +237,7 @@
     pokeapi_uri: 'https://pokeapi.co/api/v2/type/'
 
 
+<p align="justify"></p>
+<p align="justify"></p>
+<p align="justify"></p>
 
