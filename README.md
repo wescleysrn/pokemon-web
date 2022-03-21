@@ -1,3 +1,26 @@
+# How to execute the project
+
+	1 - Clone repository from github
+	
+	$ git clone https://github.com/wescleysrn/pokemon-web.git
+	
+	2 - Access the project
+	
+	$ cd pokemon-web
+	
+	3 - Install libraries and dependencies
+	
+	$ npm install
+	
+	4 - Run the project
+
+	$ ng serve
+	
+	5 - Access the solution
+	
+	http://localhost:4200/
+	
+
 # Pokemon-Web
 
     Angular project aimed at providing the features of the Pokemon challenge.
